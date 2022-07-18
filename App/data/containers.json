@@ -1,0 +1,1261 @@
+[
+  {
+    "memory": 1024,
+    "hostname": "dns-poweradmin",
+    "features": "nesting=1",
+    "ostype": "debian",
+    "rootfs": "MWhdd:subvol-50150-disk-0,size=8G",
+    "nameserver": "172.16.50.1 172.16.50.254",
+    "unprivileged": 1,
+    "net0": "name=eth0,bridge=vmbr0,gw=172.16.50.254,hwaddr=1A:57:AC:CF:35:41,ip=172.16.50.150/24,tag=50,type=veth",
+    "arch": "amd64",
+    "swap": 512,
+    "searchdomain": "mwprox.in",
+    "cores": 2,
+    "digest": "53ab5ccf34772c7432021360c403ce3c36cdbee2",
+    "status": "running",
+    "vmid": "50150",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [{ "name": "MWhdd", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "1A:57:AC:CF:35:41",
+        "ip": "172.16.50.150/24",
+        "tag": "50"
+      }
+    ]
+  },
+  {
+    "cores": 2,
+    "digest": "53b1424002adc4a1b58cd12e5e7631a7c8a18586",
+    "net0": "name=eth0,bridge=vmbr0,hwaddr=BE:8A:C6:C3:3E:D6,ip=192.168.210.20/24,type=veth",
+    "swap": 4096,
+    "arch": "amd64",
+    "rootfs": "local-zfs:subvol-903-disk-0,size=16G",
+    "description": "-- LOGIN ---\nuser: root\npassword: P5YvCepEYkgbG6Af\n--- NETWORKING 1 ---\nBridge: vmbr0\nInternal IPv4: 192.168.210.20/24\nVLAN Tag: none\n--- NETWORKING 2 ---\nBridge: vmbr0\nInternal IPv4: 10.66.188.100/24\nVLAN Tag: 700\n",
+    "ostype": "debian",
+    "net1": "name=net1,bridge=vmbr0,gw=10.66.190.1,hwaddr=AE:A4:89:8D:7D:04,ip=10.66.190.100/24,tag=900,type=veth",
+    "unprivileged": 1,
+    "mp0": "local-zfs:subvol-903-disk-1,mp=/data,backup=1,size=60G",
+    "hostname": "netdata-sink",
+    "memory": 4096,
+    "status": "stopped",
+    "vmid": "903",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["HeViS.Co_services"],
+    "Storage": [
+      { "name": "local-zfs", "size": "16G" },
+      { "name": "local-zfs", "size": "60G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:8A:C6:C3:3E:D6",
+        "ip": "192.168.210.20/24"
+      },
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "AE:A4:89:8D:7D:04",
+        "ip": "10.66.190.100/24",
+        "tag": "900"
+      }
+    ]
+  },
+  {
+    "rootfs": "MWhdd:subvol-4002100-disk-0,size=8G",
+    "ostype": "debian",
+    "nameserver": "10.255.200.1",
+    "unprivileged": 1,
+    "net1": "name=FILER0,bridge=vmbr0,hwaddr=EA:53:9E:A8:94:F5,ip=192.168.210.100/24,type=veth",
+    "memory": 1024,
+    "features": "nesting=1",
+    "mp0": "MWhdd:subvol-4002100-disk-1,mp=/srv,backup=1,mountoptions=noatime;noexec,size=40G",
+    "hostname": "filer01",
+    "cores": 2,
+    "digest": "ec4ae5b6642338663e9a3a75dca35bf456995cec",
+    "net0": "name=eth0,bridge=vmbr0,gw=10.79.162.1,hwaddr=86:F0:C6:32:C4:88,ip=10.79.162.210/24,tag=4002,type=veth",
+    "arch": "amd64",
+    "onboot": 1,
+    "swap": 512,
+    "status": "running",
+    "vmid": "4002100",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [
+      { "name": "MWhdd", "size": "8G" },
+      { "name": "MWhdd", "size": "40G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "EA:53:9E:A8:94:F5",
+        "ip": "192.168.210.100/24"
+      },
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "86:F0:C6:32:C4:88",
+        "ip": "10.79.162.210/24",
+        "tag": "4002"
+      }
+    ]
+  },
+  {
+    "digest": "0b6ca036c69fd2f3e80a80041205236f6887d7a6",
+    "cores": 1,
+    "arch": "amd64",
+    "onboot": 0,
+    "swap": 512,
+    "cmode": "shell",
+    "net0": "name=eth0,bridge=vmbr1,hwaddr=A2:90:6B:30:A8:A1,ip=dhcp,tag=201,type=veth",
+    "unprivileged": 1,
+    "rootfs": "local-zfs:subvol-212-disk-0,size=20G",
+    "ostype": "debian",
+    "memory": 512,
+    "hostname": "FrontEndMW01",
+    "status": "stopped",
+    "vmid": "212",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["MWmx"],
+    "Storage": [{ "name": "local-zfs", "size": "20G" }],
+    "networks": [
+      {
+        "bridge": "vmbr1",
+        "hwaddr": "A2:90:6B:30:A8:A1",
+        "ip": "dhcp",
+        "tag": "201"
+      }
+    ]
+  },
+  {
+    "net0": "name=Story0,bridge=vmbr0,gw=10.64.100.1,hwaddr=BE:EF:FE:00:64:64,ip=10.64.100.100/24,tag=100,type=veth",
+    "mp3": "MWhdd:basevol-100100-disk-2,mp=/ma03,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "swap": 512,
+    "rootfs": "local-zfs:basevol-100100-disk-0,mountoptions=lazytime,size=8G",
+    "nameserver": "10.64.100.1",
+    "unprivileged": 1,
+    "mp2": "MWhdd:basevol-100100-disk-1,mp=/ma02,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "mp0": "local-zfs:basevol-100100-disk-1,mp=/ma00,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "searchdomain": "stories.mwprox.in",
+    "cores": 2,
+    "digest": "7419cf41ea50961e23b440b1241494cfdfc81c8b",
+    "template": 1,
+    "cmode": "shell",
+    "arch": "amd64",
+    "mp1": "MWhdd:basevol-100100-disk-0,mp=/ma01,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "ostype": "devuan",
+    "memory": 1024,
+    "features": "nesting=1",
+    "hostname": "m00",
+    "status": "stopped",
+    "vmid": "100100",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:64:64",
+        "ip": "10.64.100.100/24",
+        "tag": "100"
+      }
+    ]
+  },
+  {
+    "net0": "name=Story0,bridge=vmbr0,gw=10.64.100.1,hwaddr=BE:EF:FE:00:64:68,ip=10.64.100.104/24,tag=100,type=veth",
+    "cmode": "shell",
+    "mp3": "MWhdd:subvol-100104-disk-1,mp=/ma03,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "arch": "amd64",
+    "swap": 512,
+    "searchdomain": "stories.mwprox.in",
+    "cores": 2,
+    "digest": "75b4fa04dbb66587be386c22f511ff537ce70017",
+    "memory": 1536,
+    "hostname": "m04a",
+    "mp0": "local-zfs:subvol-100104-disk-1,mp=/ma00,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "features": "nesting=1",
+    "ostype": "devuan",
+    "rootfs": "local-zfs:subvol-100104-disk-0,mountoptions=lazytime,size=8G",
+    "mp1": "MWhdd:subvol-100104-disk-2,mp=/ma01,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "nameserver": "10.64.100.1",
+    "mp2": "MWhdd:subvol-100104-disk-0,mp=/ma02,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "unprivileged": 1,
+    "status": "running",
+    "vmid": "100104",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["HVSC_StorieA"],
+    "Storage": [
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "25G" },
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:64:68",
+        "ip": "10.64.100.104/24",
+        "tag": "100"
+      }
+    ]
+  },
+  {
+    "arch": "amd64",
+    "cmode": "shell",
+    "mp12": "MWhdd:subvol-666174-disk-2,mp=/datastore/PayThem,mountoptions=lazytime,size=1T",
+    "digest": "b49ee2a6ac6a91708fd5d7be5b01f307f3cb4b9e",
+    "searchdomain": "cloudoffice.net.za cloudoffice.co.za",
+    "cores": 6,
+    "hostname": "pbs-mwp04",
+    "features": "keyctl=1,mknod=1,nesting=1",
+    "memory": 8096,
+    "ostype": "debian",
+    "swap": 512,
+    "onboot": 1,
+    "net0": "name=LAN,bridge=vmbr0,hwaddr=AE:8D:F9:C1:53:4C,ip=10.79.210.14/24,tag=4050,type=veth",
+    "mp10": "MWhdd:subvol-666174-disk-0,mp=/datastore/MWprox,mountoptions=lazytime,size=512G",
+    "mp11": "MWhdd:subvol-666174-disk-1,mp=/datastore/TrosCritical,mountoptions=lazytime,size=5632G",
+    "net1": "name=WAN,bridge=vmbr666,gw=197.242.92.137,hwaddr=F6:D2:A5:D2:6A:92,ip=197.242.92.142/29,type=veth",
+    "mp13": "MWhdd:subvol-666174-disk-3,mp=/datastore/MWproxCrit,mountoptions=lazytime,size=2T",
+    "unprivileged": 1,
+    "nameserver": "10.79.210.1",
+    "rootfs": "local-zfs:subvol-666174-disk-0,mountoptions=noatime,size=8G",
+    "status": "running",
+    "vmid": "666174",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["PBS"],
+    "Storage": [
+      { "name": "MWhdd", "size": "1T" },
+      { "name": "MWhdd", "size": "512G" },
+      { "name": "MWhdd", "size": "5632G" },
+      { "name": "MWhdd", "size": "2T" },
+      { "name": "local-zfs", "size": "8G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "AE:8D:F9:C1:53:4C",
+        "ip": "10.79.210.14/24",
+        "tag": "4050"
+      },
+      {
+        "bridge": "vmbr666",
+        "hwaddr": "F6:D2:A5:D2:6A:92",
+        "ip": "197.242.92.142/29"
+      }
+    ]
+  },
+  {
+    "cores": 2,
+    "digest": "ed5a8c0d1a4be118d223caf2372e38016f91d6ec",
+    "net0": "name=eth0,bridge=vmbr0,gw=10.255.200.1,hwaddr=0E:3F:62:34:A0:A5,ip=10.255.200.2/24,tag=4002,type=veth",
+    "swap": 2048,
+    "onboot": 1,
+    "arch": "amd64",
+    "ostype": "debian",
+    "description": "root\n123qwe\n",
+    "rootfs": "local-zfs:subvol-101-disk-0,size=16G",
+    "unprivileged": 1,
+    "hostname": "pi-hole",
+    "memory": 2048,
+    "status": "running",
+    "vmid": "101",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["HeViS.Co_services"],
+    "Storage": [{ "name": "local-zfs", "size": "16G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "0E:3F:62:34:A0:A5",
+        "ip": "10.255.200.2/24",
+        "tag": "4002"
+      }
+    ]
+  },
+  {
+    "arch": "amd64",
+    "swap": 512,
+    "onboot": 1,
+    "net0": "name=eth0,bridge=vmbr0,gw=10.79.226.1,hwaddr=3A:E3:10:CC:A0:E7,ip=10.79.226.100/24,tag=4066,type=veth",
+    "cmode": "shell",
+    "digest": "f15c19059edc20eb7727fc91d5d67a72afd32cd3",
+    "cores": 1,
+    "memory": 512,
+    "hostname": "vlkms",
+    "unprivileged": 1,
+    "description": "Volume license manager VM for Windows instances\n",
+    "ostype": "debian",
+    "rootfs": "local-zfs:subvol-4066100-disk-0,size=8G",
+    "nameserver": "10.79.226.1 10.255.255.254 10.1.1.1",
+    "status": "running",
+    "vmid": "4066100",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["HeViS.Co_services"],
+    "Storage": [{ "name": "local-zfs", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "3A:E3:10:CC:A0:E7",
+        "ip": "10.79.226.100/24",
+        "tag": "4066"
+      }
+    ]
+  },
+  {
+    "cores": 1,
+    "digest": "2e16d97babcd26d0c818a5e9466097db13bb97e4",
+    "net0": "name=SVC50,bridge=vmbr0,gw=172.16.50.254,hwaddr=0E:E1:C9:81:7A:64,ip=172.16.50.13/24,tag=50,type=veth",
+    "swap": 512,
+    "arch": "amd64",
+    "nameserver": "172.16.50.254",
+    "rootfs": "MWhdd:subvol-50013-disk-0,size=8G",
+    "ostype": "debian",
+    "unprivileged": 1,
+    "features": "nesting=1",
+    "hostname": "dns-rec13",
+    "memory": 1024,
+    "status": "running",
+    "vmid": "50013",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [{ "name": "MWhdd", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "0E:E1:C9:81:7A:64",
+        "ip": "172.16.50.13/24",
+        "tag": "50"
+      }
+    ]
+  },
+  {
+    "memory": 1024,
+    "features": "nesting=1",
+    "mp0": "local-zfs:subvol-100107-disk-1,mp=/ma00,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "hostname": "m07a",
+    "rootfs": "local-zfs:subvol-100107-disk-0,mountoptions=lazytime,size=8G",
+    "mp1": "MWhdd:subvol-100107-disk-0,mp=/ma01,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "ostype": "devuan",
+    "nameserver": "10.64.100.1",
+    "unprivileged": 1,
+    "mp2": "MWhdd:subvol-100107-disk-1,mp=/ma02,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "cmode": "shell",
+    "net0": "name=Story0,bridge=vmbr0,gw=10.64.100.1,hwaddr=BE:EF:FE:00:64:6B,ip=10.64.100.107/24,tag=100,type=veth",
+    "arch": "amd64",
+    "mp3": "MWhdd:subvol-100107-disk-2,mp=/ma03,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "swap": 512,
+    "cores": 2,
+    "searchdomain": "stories.mwprox.in",
+    "digest": "456a0c7cd645d0d18030728197c6e4fe5da4bf65",
+    "status": "running",
+    "vmid": "100107",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["HVSC_StorieA"],
+    "Storage": [
+      { "name": "local-zfs", "size": "25G" },
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:64:6B",
+        "ip": "10.64.100.107/24",
+        "tag": "100"
+      }
+    ]
+  },
+  {
+    "digest": "dcafb1e28faab9d5dc76fb94dd06dd23869c5787",
+    "cores": 2,
+    "swap": 0,
+    "arch": "amd64",
+    "net0": "name=AGW_ITC_1024,bridge=vmbr0,gw=10.68.0.1,hwaddr=BE:EF:FE:04:00:0a,ip=10.68.0.10/24,tag=1024,type=veth",
+    "unprivileged": 1,
+    "nameserver": "10.68.0.1",
+    "ostype": "debian",
+    "rootfs": "local-zfs:subvol-1024010-disk-0,mountoptions=noatime;lazytime,size=8G",
+    "mp0": "local-zfs:subvol-1024010-disk-1,mp=/srv/feeds,backup=1,mountoptions=lazytime;noexec;nodev;nosuid;noatime,size=100G",
+    "hostname": "AGW-ITC-sftp-bcx",
+    "features": "nesting=1",
+    "memory": 4096,
+    "status": "running",
+    "vmid": "1024010",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "local-zfs", "size": "100G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:04:00:0a",
+        "ip": "10.68.0.10/24",
+        "tag": "1024"
+      }
+    ]
+  },
+  {
+    "rootfs": "local-zfs:subvol-1001-disk-0,mountoptions=noatime,size=8G",
+    "ostype": "debian",
+    "unprivileged": 1,
+    "hostname": "jumper",
+    "memory": 2048,
+    "cores": 2,
+    "digest": "9fb23f172fd28e1a039d7c1452c765f224d1a0d0",
+    "cmode": "shell",
+    "net0": "name=eth0,bridge=vmbr0,hwaddr=7a:2c:d9:98:57:7d,ip=dhcp,tag=300,type=veth",
+    "onboot": 1,
+    "swap": 2048,
+    "arch": "amd64",
+    "status": "running",
+    "vmid": "1001",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["Jumpers"],
+    "Storage": [{ "name": "local-zfs", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "7a:2c:d9:98:57:7d",
+        "ip": "dhcp",
+        "tag": "300"
+      }
+    ]
+  },
+  {
+    "rootfs": "local-zfs:subvol-908-disk-0,size=8G",
+    "ostype": "debian",
+    "description": "root\n9ETfAPcaLmjUX8Sj\n",
+    "unprivileged": 1,
+    "net1": "name=net1,bridge=vmbr0,gw=10.66.188.1,hwaddr=B6:CF:E6:03:E8:83,ip=10.66.188.99/24,tag=700,type=veth",
+    "memory": 4096,
+    "hostname": "scc-srv",
+    "cores": 2,
+    "digest": "472612d8d9db48431db244a157fbccb403a308d2",
+    "parent": "before_scc_srv_installation",
+    "net0": "name=eth0,bridge=vmbr0,hwaddr=A6:50:3D:12:72:BD,ip=192.168.210.10/24,type=veth",
+    "arch": "amd64",
+    "swap": 4096,
+    "status": "stopped",
+    "vmid": "908",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["HeViS.Co_services"],
+    "Storage": [{ "name": "local-zfs", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "B6:CF:E6:03:E8:83",
+        "ip": "10.66.188.99/24",
+        "tag": "700"
+      },
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "A6:50:3D:12:72:BD",
+        "ip": "192.168.210.10/24"
+      }
+    ]
+  },
+  {
+    "unprivileged": 1,
+    "net1": "name=CACHE,bridge=vmbr0,gw=10.79.162.1,hwaddr=9E:21:AC:BD:3F:40,ip=10.79.162.10/24,tag=4002,type=veth",
+    "mp1": "MWhdd:subvol-9901-disk-0,mp=/var/cache/apt-cacher-ng,mountoptions=noatime;nodev;noexec;nosuid,replicate=0,size=50G",
+    "rootfs": "local-zfs:subvol-9901-disk-1,mountoptions=noatime,size=8G",
+    "ostype": "debian",
+    "nameserver": "10.79.162.1 10.255.200.1 9.9.9.9",
+    "memory": 2048,
+    "hostname": "apter",
+    "digest": "29cbe4387c3441bd45b3ae07d011958ef708c454",
+    "cores": 1,
+    "arch": "amd64",
+    "onboot": 1,
+    "swap": 512,
+    "parent": "vzdump",
+    "cmode": "shell",
+    "status": "running",
+    "vmid": "9901",
+    "node": "mwprox04",
+    "type": "lxc",
+    "pool": ["HeViS.Co_services"],
+    "Storage": [
+      { "name": "MWhdd", "size": "50G" },
+      { "name": "local-zfs", "size": "8G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "9E:21:AC:BD:3F:40",
+        "ip": "10.79.162.10/24",
+        "tag": "4002"
+      }
+    ]
+  },
+  {
+    "cmode": "shell",
+    "digest": "7b2059fc65b121b3156a39e58009b03f3e7d5ba2",
+    "rootfs": "local-zfs:subvol-700-disk-0,size=32G",
+    "net0": "name=eth0,bridge=vmbr0,gw=10.66.188.1,hwaddr=BE:EF:FE:02:BC:02,ip=10.66.188.2/24,tag=700,type=veth",
+    "memory": 6144,
+    "hostname": "webtide-supalift",
+    "unprivileged": 1,
+    "arch": "amd64",
+    "cores": 4,
+    "searchdomain": "10.22.227.1",
+    "swap": 2048,
+    "ostype": "ubuntu",
+    "mp0": "local-zfs:subvol-700-disk-1,mp=/mnt/aestus,backup=1,size=200G",
+    "onboot": 1,
+    "nameserver": "9.9.9.9",
+    "status": "running",
+    "vmid": "700",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": ["WebTide"],
+    "Storage": [
+      { "name": "local-zfs", "size": "32G" },
+      { "name": "local-zfs", "size": "200G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:02:BC:02",
+        "ip": "10.66.188.2/24",
+        "tag": "700"
+      }
+    ]
+  },
+  {
+    "features": "nesting=1",
+    "description": "user: debian ??\n",
+    "net0": "name=eth0,bridge=vmbr0,gw=10.22.223.1,hwaddr=72:B8:F3:0A:C9:FD,ip=10.22.223.223/24,tag=223,type=veth",
+    "hostname": "blommetjie",
+    "memory": 8192,
+    "rootfs": "MWhdd:subvol-22300001-disk-0,mountoptions=noatime,size=8G",
+    "digest": "130c24916b71c3d3889097607d16308e294695f4",
+    "onboot": 1,
+    "mp0": "MWhdd:subvol-22300001-disk-1,mp=/home,backup=1,mountoptions=noatime;nodev,size=10G",
+    "nameserver": "9.9.9.9",
+    "mp1": "MWhdd:subvol-22300001-disk-2,mp=/opt,backup=1,mountoptions=noatime;nodev,size=10G",
+    "arch": "amd64",
+    "cores": 2,
+    "searchdomain": "10.22.223.1",
+    "swap": 8192,
+    "ostype": "debian",
+    "status": "running",
+    "vmid": "22300001",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [
+      { "name": "MWhdd", "size": "8G" },
+      { "name": "MWhdd", "size": "10G" },
+      { "name": "MWhdd", "size": "10G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "72:B8:F3:0A:C9:FD",
+        "ip": "10.22.223.223/24",
+        "tag": "223"
+      }
+    ]
+  },
+  {
+    "swap": 512,
+    "ostype": "debian",
+    "cores": 2,
+    "mp1": "MWhdd:subvol-20100-disk-2,mp=/pglogs,mountoptions=noatime;nodev;noexec;nosuid,size=8G",
+    "arch": "amd64",
+    "nameserver": "10.64.20.1",
+    "mp0": "MWhdd:subvol-20100-disk-1,mp=/pgdata,backup=1,mountoptions=noatime;nodev;nosuid,size=8G",
+    "rootfs": "MWhdd:subvol-20100-disk-0,size=8G",
+    "digest": "959bdb17897c561136afbf0dd67561681b80bd94",
+    "unprivileged": 1,
+    "memory": 2048,
+    "hostname": "konfoesie",
+    "features": "nesting=1",
+    "net0": "name=eth0,bridge=vmbr0,gw=10.64.20.1,hwaddr=BE:EF:FE:00:14:64,ip=10.64.20.100/24,tag=20,type=veth",
+    "status": "running",
+    "vmid": "20100",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [
+      { "name": "MWhdd", "size": "8G" },
+      { "name": "MWhdd", "size": "8G" },
+      { "name": "MWhdd", "size": "8G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:14:64",
+        "ip": "10.64.20.100/24",
+        "tag": "20"
+      }
+    ]
+  },
+  {
+    "rootfs": "local-zfs:subvol-22301-disk-0,mountoptions=noatime,size=8G",
+    "digest": "e9d1bc81c6af28b3291f7612cbdba8b4f9b08f1c",
+    "hostname": "blommetjie",
+    "memory": 8192,
+    "features": "nesting=1",
+    "net0": "name=Blomme223,bridge=vmbr0,gw=10.64.223.1,hwaddr=BE:EF:FE:00:DF:DF,ip=10.64.223.223/24,tag=223,type=veth",
+    "description": "user: debian ??\n",
+    "ostype": "debian",
+    "net1": "name=legacy,bridge=vmbr0,hwaddr=BE:EF:FE:A0:14:ED,ip=10.22.223.223/24,tag=223,type=veth",
+    "swap": 8192,
+    "searchdomain": "mwprox.in",
+    "cores": 2,
+    "mp1": "local-zfs:subvol-22301-disk-2,mp=/opt,backup=1,mountoptions=noatime;nodev,size=10G",
+    "arch": "amd64",
+    "nameserver": "10.64.223.1 9.9.9.9",
+    "onboot": 1,
+    "mp0": "local-zfs:subvol-22301-disk-1,mp=/home,backup=1,mountoptions=noatime;nodev,size=10G",
+    "status": "running",
+    "vmid": "22301",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": ["HeViS.Co_services"],
+    "Storage": [
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "local-zfs", "size": "10G" },
+      { "name": "local-zfs", "size": "10G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:DF:DF",
+        "ip": "10.64.223.223/24",
+        "tag": "223"
+      },
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:A0:14:ED",
+        "ip": "10.22.223.223/24",
+        "tag": "223"
+      }
+    ]
+  },
+  {
+    "net0": "name=Story0,bridge=vmbr0,gw=10.64.100.1,hwaddr=BE:EF:FE:00:64:6A,ip=10.64.100.106/24,tag=100,type=veth",
+    "features": "nesting=1",
+    "hostname": "m06a",
+    "memory": 1024,
+    "unprivileged": 1,
+    "mp3": "MWhdd:subvol-100106-disk-1,mp=/ma03,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "cmode": "shell",
+    "mp2": "MWhdd:subvol-100106-disk-0,mp=/ma02,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "digest": "e8c46b910913c9e729e742d6b885b9b17220d35e",
+    "rootfs": "local-zfs:subvol-100106-disk-1,mountoptions=lazytime,size=8G",
+    "mp0": "local-zfs:subvol-100106-disk-0,mp=/ma00,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "nameserver": "10.64.100.1",
+    "arch": "amd64",
+    "mp1": "MWhdd:subvol-100106-disk-2,mp=/ma01,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "ostype": "devuan",
+    "swap": 512,
+    "searchdomain": "stories.mwprox.in",
+    "cores": 2,
+    "status": "running",
+    "vmid": "100106",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": ["HVSC_StorieA"],
+    "Storage": [
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "local-zfs", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:64:6A",
+        "ip": "10.64.100.106/24",
+        "tag": "100"
+      }
+    ]
+  },
+  {
+    "rootfs": "local-zfs:subvol-20020-disk-0,size=8G",
+    "digest": "5d058e9f41343ba1ce5c250d96e20173aa8f2f1c",
+    "unprivileged": 1,
+    "memory": 2048,
+    "hostname": "voshaar",
+    "features": "nesting=1",
+    "net0": "name=eth0,bridge=vmbr0,gw=10.64.20.1,hwaddr=BE:EF:FE:00:14:14,ip=10.64.20.20/24,tag=20,type=veth",
+    "cores": 3,
+    "ostype": "debian",
+    "swap": 512,
+    "parent": "authhttps",
+    "arch": "amd64",
+    "nameserver": "10.64.20.1",
+    "mp0": "local-zfs:subvol-20020-disk-1,mp=/srv,backup=1,mountoptions=lazytime,size=8G",
+    "status": "running",
+    "vmid": "20020",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "local-zfs", "size": "8G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:14:14",
+        "ip": "10.64.20.20/24",
+        "tag": "20"
+      }
+    ]
+  },
+  {
+    "digest": "46002b7e906363de8839a0d028f42ae93d925786",
+    "rootfs": "MWhdd:subvol-50101-disk-0,size=8G",
+    "memory": 2048,
+    "hostname": "dns-auth101",
+    "unprivileged": 1,
+    "net0": "name=SVC50,bridge=vmbr0,gw=172.16.50.254,hwaddr=8A:18:3B:A6:95:85,ip=172.16.50.101/24,tag=50,type=veth",
+    "features": "nesting=1",
+    "cores": 2,
+    "searchdomain": "mwprox.in",
+    "ostype": "debian",
+    "swap": 512,
+    "parent": "t1",
+    "arch": "amd64",
+    "nameserver": "172.16.50.254 9.9.9.9 1.1.1.1",
+    "status": "running",
+    "vmid": "50101",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [{ "name": "MWhdd", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "8A:18:3B:A6:95:85",
+        "ip": "172.16.50.101/24",
+        "tag": "50"
+      }
+    ]
+  },
+  {
+    "rootfs": "MWhdd:subvol-10010-disk-0,size=8G",
+    "digest": "1f833ac52b70d678b2db780847d9f824e1ed9e48",
+    "unprivileged": 1,
+    "memory": 1024,
+    "hostname": "baie",
+    "features": "nesting=1",
+    "net0": "name=eth0,bridge=vmbr0,gw=10.64.10.1,hwaddr=BE:EF:FE:00:0a:0a,ip=10.64.10.10/24,tag=10,type=veth",
+    "searchdomain": "mwprox.in",
+    "cores": 2,
+    "swap": 512,
+    "ostype": "debian",
+    "arch": "amd64",
+    "nameserver": "10.64.10.1",
+    "status": "running",
+    "vmid": "10010",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [{ "name": "MWhdd", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:0a:0a",
+        "ip": "10.64.10.10/24",
+        "tag": "10"
+      }
+    ]
+  },
+  {
+    "digest": "f446179bd22d912b4a1c3dc343ee1c97d61d2f02",
+    "rootfs": "MWhdd:subvol-50201-disk-0,size=8G",
+    "memory": 2048,
+    "hostname": "dns-pg01",
+    "unprivileged": 1,
+    "net0": "name=SVC50,bridge=vmbr0,gw=172.16.50.254,hwaddr=EA:CD:A2:09:F9:BC,ip=172.16.50.201/24,tag=50,type=veth",
+    "features": "nesting=1",
+    "ostype": "debian",
+    "swap": 512,
+    "cores": 2,
+    "searchdomain": "mpwrox.in",
+    "arch": "amd64",
+    "parent": "beforepoweradmin",
+    "mp1": "local-zfs:subvol-50201-disk-1,mp=/pglogs,backup=1,mountoptions=noatime;noexec;nosuid;nodev,size=12G",
+    "nameserver": "172.16.50.254",
+    "mp0": "local-zfs:subvol-50201-disk-0,mp=/pgdata,backup=1,mountoptions=noatime,size=12G",
+    "status": "running",
+    "vmid": "50201",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [
+      { "name": "MWhdd", "size": "8G" },
+      { "name": "local-zfs", "size": "12G" },
+      { "name": "local-zfs", "size": "12G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "EA:CD:A2:09:F9:BC",
+        "ip": "172.16.50.201/24",
+        "tag": "50"
+      }
+    ]
+  },
+  {
+    "rootfs": "local-zfs:subvol-666085-disk-0,mountoptions=noatime,size=32G",
+    "digest": "43a3e8c61679abcf68d488aab435f209d39f50fc",
+    "net0": "name=LAN,bridge=vmbr0,hwaddr=92:64:A5:DF:94:E7,ip=10.79.210.12/24,type=veth",
+    "unprivileged": 1,
+    "hostname": "pbs-mwp02",
+    "memory": 4096,
+    "arch": "amd64",
+    "cores": 2,
+    "net1": "name=WAN,bridge=vmbr666,gw=196.40.100.81,hwaddr=EE:0B:06:E8:E6:C6,ip=196.40.100.86/29,type=veth",
+    "ostype": "debian",
+    "swap": 512,
+    "onboot": 1,
+    "mp0": "MWhdd:subvol-666085-disk-0,mp=/PBSMW02,mountoptions=nodev;noexec;nosuid,replicate=0,size=1T",
+    "nameserver": "10.79.210.1",
+    "status": "running",
+    "vmid": "666086",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": ["PBS"],
+    "Storage": [
+      { "name": "local-zfs", "size": "32G" },
+      { "name": "MWhdd", "size": "1T" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "92:64:A5:DF:94:E7",
+        "ip": "10.79.210.12/24"
+      },
+      {
+        "bridge": "vmbr666",
+        "hwaddr": "EE:0B:06:E8:E6:C6",
+        "ip": "196.40.100.86/29"
+      }
+    ]
+  },
+  {
+    "cores": 2,
+    "searchdomain": "mwprox.in",
+    "swap": 512,
+    "ostype": "debian",
+    "net1": "name=Blomme223,bridge=vmbr0,gw=10.64.223.1,hwaddr=BE:EF:FE:00:DF:14,ip=10.64.223.20/24,tag=223,type=veth",
+    "parent": "pre_pgupgrade",
+    "arch": "amd64",
+    "mp1": "MWhdd:subvol-22302-disk-0,mp=/pglogs,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=10G",
+    "nameserver": "10.64.223.1 9.9.9.9",
+    "mp0": "local-zfs:subvol-22302-disk-1,mp=/db,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=10G",
+    "onboot": 1,
+    "digest": "7aba3b9a19f761f5e8141163e19ea3a291256134",
+    "rootfs": "local-zfs:subvol-22302-disk-0,mountoptions=noatime,size=8G",
+    "mp2": "MWhdd:subvol-22302-disk-1,mp=/backups,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=30G",
+    "memory": 4096,
+    "hostname": "blommewinkel",
+    "net0": "name=Legacy,bridge=vmbr0,hwaddr=22:1A:51:7F:18:60,ip=10.22.223.20/24,tag=223,type=veth",
+    "status": "running",
+    "vmid": "22302",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": ["HeViS.Co_services"],
+    "Storage": [
+      { "name": "MWhdd", "size": "10G" },
+      { "name": "local-zfs", "size": "10G" },
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "MWhdd", "size": "30G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:DF:14",
+        "ip": "10.64.223.20/24",
+        "tag": "223"
+      },
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "22:1A:51:7F:18:60",
+        "ip": "10.22.223.20/24",
+        "tag": "223"
+      }
+    ]
+  },
+  {
+    "mp1": "MWhdd:subvol-100103-disk-0,mp=/ma01,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "arch": "amd64",
+    "searchdomain": "stories.mwprox.in",
+    "cores": 2,
+    "ostype": "devuan",
+    "swap": 512,
+    "mp0": "local-zfs:subvol-100103-disk-0,mp=/ma00,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "nameserver": "10.64.100.1",
+    "cmode": "shell",
+    "mp2": "MWhdd:subvol-100103-disk-2,mp=/ma02,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "mp3": "MWhdd:subvol-100103-disk-1,mp=/ma03,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "rootfs": "local-zfs:subvol-100103-disk-1,mountoptions=lazytime,size=8G",
+    "digest": "f227b5493f65c7fb3f16774be0e5f0ec2b262bba",
+    "features": "nesting=1",
+    "net0": "name=Story0,bridge=vmbr0,gw=10.64.100.1,hwaddr=BE:EF:FE:00:64:67,ip=10.64.100.103/24,tag=100,type=veth",
+    "unprivileged": 1,
+    "hostname": "m03a",
+    "memory": 1536,
+    "status": "running",
+    "vmid": "100103",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": ["HVSC_StorieA"],
+    "Storage": [
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "8G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:64:67",
+        "ip": "10.64.100.103/24",
+        "tag": "100"
+      }
+    ]
+  },
+  {
+    "features": "nesting=1",
+    "net0": "name=Story0,bridge=vmbr0,gw=10.64.100.1,hwaddr=BE:EF:FE:00:64:66,ip=10.64.100.102/24,tag=100,type=veth",
+    "unprivileged": 1,
+    "hostname": "m02a",
+    "memory": 1536,
+    "mp3": "MWhdd:subvol-100102-disk-0,mp=/ma03,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "mp2": "MWhdd:subvol-100102-disk-2,mp=/ma02,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "cmode": "shell",
+    "rootfs": "local-zfs:subvol-100102-disk-1,mountoptions=lazytime,size=8G",
+    "digest": "03950f57d61edaea9eb5bc6714d28900acbe57f6",
+    "mp0": "local-zfs:subvol-100102-disk-0,mp=/ma00,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "nameserver": "10.64.100.1",
+    "mp1": "MWhdd:subvol-100102-disk-1,mp=/ma01,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "arch": "amd64",
+    "ostype": "devuan",
+    "swap": 512,
+    "cores": 2,
+    "searchdomain": "stories.mwprox.in",
+    "status": "running",
+    "vmid": "100102",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": ["HVSC_StorieA"],
+    "Storage": [
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "local-zfs", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:64:66",
+        "ip": "10.64.100.102/24",
+        "tag": "100"
+      }
+    ]
+  },
+  {
+    "swap": 512,
+    "ostype": "debian",
+    "cores": 1,
+    "arch": "amd64",
+    "nameserver": "172.16.50.254",
+    "digest": "968c1f6c40635fea2409b6e4ccebe2f367bcffb4",
+    "rootfs": "MWhdd:subvol-50012-disk-0,size=8G",
+    "hostname": "dns-rec12",
+    "memory": 1024,
+    "unprivileged": 1,
+    "net0": "name=SVC50,bridge=vmbr0,gw=172.16.50.254,hwaddr=6A:BA:E7:13:A2:23,ip=172.16.50.12/24,tag=50,type=veth",
+    "features": "nesting=1",
+    "status": "running",
+    "vmid": "50012",
+    "node": "mwprox02",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [{ "name": "MWhdd", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "6A:BA:E7:13:A2:23",
+        "ip": "172.16.50.12/24",
+        "tag": "50"
+      }
+    ]
+  },
+  {
+    "net0": "name=Story0,bridge=vmbr0,gw=10.64.100.1,hwaddr=BE:EF:FE:00:64:65,ip=10.64.100.101/24,tag=100,type=veth",
+    "mp3": "MWhdd:subvol-100101-disk-0,mp=/ma03,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "cmode": "shell",
+    "memory": 1536,
+    "mp2": "MWhdd:subvol-100101-disk-1,mp=/ma02,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "swap": 512,
+    "ostype": "devuan",
+    "mp0": "local-zfs:subvol-100101-disk-0,mp=/ma00,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "arch": "amd64",
+    "hostname": "m01a",
+    "unprivileged": 1,
+    "features": "nesting=1",
+    "rootfs": "local-zfs:subvol-100101-disk-1,mountoptions=lazytime,size=8G",
+    "mp1": "MWhdd:subvol-100101-disk-2,mp=/ma01,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "searchdomain": "stories.mwprox.in",
+    "digest": "645e9aa44192d645d8d1a129f362d76487fc5f03",
+    "nameserver": "10.64.100.1",
+    "cores": 2,
+    "status": "running",
+    "vmid": "100101",
+    "node": "mwprox01",
+    "type": "lxc",
+    "pool": ["HVSC_StorieA"],
+    "Storage": [
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "25G" },
+      { "name": "local-zfs", "size": "8G" },
+      { "name": "MWhdd", "size": "25G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:64:65",
+        "ip": "10.64.100.101/24",
+        "tag": "100"
+      }
+    ]
+  },
+  {
+    "arch": "amd64",
+    "mp0": "local-zfs:subvol-100105-disk-1,mp=/ma00,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "ostype": "devuan",
+    "swap": 512,
+    "cmode": "shell",
+    "memory": 1024,
+    "net0": "name=Story0,bridge=vmbr0,gw=10.64.100.1,hwaddr=BE:EF:FE:00:64:69,ip=10.64.100.105/24,tag=100,type=veth",
+    "mp3": "MWhdd:subvol-100105-disk-0,mp=/ma03,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "mp2": "MWhdd:subvol-100105-disk-1,mp=/ma02,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "digest": "be0bd3f6ab15dd91b012dfb14ffd3f8a4191790a",
+    "mp1": "MWhdd:subvol-100105-disk-2,mp=/ma01,acl=1,backup=1,mountoptions=noatime;nodev;noexec;nosuid,size=25G",
+    "searchdomain": "stories.mwprox.in",
+    "cores": 2,
+    "nameserver": "10.64.100.1",
+    "rootfs": "local-zfs:subvol-100105-disk-0,mountoptions=lazytime,size=8G",
+    "features": "nesting=1",
+    "hostname": "m05a",
+    "unprivileged": 1,
+    "status": "running",
+    "vmid": "100105",
+    "node": "mwprox01",
+    "type": "lxc",
+    "pool": ["HVSC_StorieA"],
+    "Storage": [
+      { "name": "local-zfs", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "MWhdd", "size": "25G" },
+      { "name": "local-zfs", "size": "8G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:00:64:69",
+        "ip": "10.64.100.105/24",
+        "tag": "100"
+      }
+    ]
+  },
+  {
+    "cores": 2,
+    "nameserver": "172.16.50.254",
+    "mp1": "local-zfs:subvol-50202-disk-0,mp=/pglogs,backup=1,mountoptions=noatime;noexec;nosuid;nodev,size=12G",
+    "digest": "86503ebb32111b03ba25ac21a739581bad94be74",
+    "searchdomain": "mpwrox.in",
+    "rootfs": "MWhdd:subvol-50202-disk-0,size=8G",
+    "features": "nesting=1",
+    "hostname": "dns-pg02",
+    "unprivileged": 1,
+    "arch": "amd64",
+    "mp0": "local-zfs:subvol-50202-disk-1,mp=/pgdata,backup=1,mountoptions=noatime,size=12G",
+    "ostype": "debian",
+    "swap": 512,
+    "memory": 2048,
+    "net0": "name=SVC50,bridge=vmbr0,gw=172.16.50.254,hwaddr=EE:76:C9:DC:95:19,ip=172.16.50.202/24,tag=50,type=veth",
+    "status": "running",
+    "vmid": "50202",
+    "node": "mwprox01",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [
+      { "name": "local-zfs", "size": "12G" },
+      { "name": "MWhdd", "size": "8G" },
+      { "name": "local-zfs", "size": "12G" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "EE:76:C9:DC:95:19",
+        "ip": "172.16.50.202/24",
+        "tag": "50"
+      }
+    ]
+  },
+  {
+    "nameserver": "10.79.210.1",
+    "cores": 2,
+    "net1": "name=WAN,bridge=vmbr666,gw=196.40.100.81,hwaddr=F2:AB:5F:9A:1C:62,ip=196.40.100.85/29,type=veth",
+    "digest": "2b1862f5c3bfea0f63554864f4caa34704daa0c5",
+    "rootfs": "local-zfs:subvol-666086-disk-0,mountoptions=noatime,size=32G",
+    "hostname": "pbs-mwp01",
+    "unprivileged": 1,
+    "onboot": 1,
+    "mp0": "MWhdd:subvol-666085-disk-0,mp=/PBSMW01,mountoptions=nodev;noexec;nosuid,replicate=0,size=1T",
+    "arch": "amd64",
+    "ostype": "debian",
+    "swap": 512,
+    "net0": "name=LAN,bridge=vmbr0,hwaddr=56:EF:00:6A:E3:4A,ip=10.79.210.11/24,type=veth",
+    "memory": 4096,
+    "status": "running",
+    "vmid": "666085",
+    "node": "mwprox01",
+    "type": "lxc",
+    "pool": ["PBS"],
+    "Storage": [
+      { "name": "local-zfs", "size": "32G" },
+      { "name": "MWhdd", "size": "1T" }
+    ],
+    "networks": [
+      {
+        "bridge": "vmbr666",
+        "hwaddr": "F2:AB:5F:9A:1C:62",
+        "ip": "196.40.100.85/29"
+      },
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "56:EF:00:6A:E3:4A",
+        "ip": "10.79.210.11/24"
+      }
+    ]
+  },
+  {
+    "onboot": 1,
+    "arch": "amd64",
+    "ostype": "debian",
+    "description": "root\nCq4QxUF7J3kYLHBP\n",
+    "swap": 2048,
+    "net0": "name=eth0,bridge=vmbr0,gw=10.100.40.1,hwaddr=86:AA:84:86:C1:69,ip=10.100.40.10/24,tag=4000,type=veth",
+    "memory": 2048,
+    "nameserver": "10.100.40.1",
+    "cores": 2,
+    "digest": "da6b2b8b865d957f4bf6e5d4465ee808842d938c",
+    "rootfs": "MWhdd:subvol-4001-disk-0,size=10G",
+    "parent": "before_update",
+    "features": "keyctl=1,nesting=1",
+    "unprivileged": 1,
+    "hostname": "mw-queue-client",
+    "status": "running",
+    "vmid": "4001",
+    "node": "mwprox01",
+    "type": "lxc",
+    "pool": ["MoneyWorks"],
+    "Storage": [{ "name": "MWhdd", "size": "10G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "86:AA:84:86:C1:69",
+        "ip": "10.100.40.10/24",
+        "tag": "4000"
+      }
+    ]
+  },
+  {
+    "digest": "7f3bc132e557fee5d13f56b7f86273a2aae02fb6",
+    "cores": 1,
+    "nameserver": "172.16.50.254",
+    "rootfs": "MWhdd:subvol-50011-disk-0,size=8G",
+    "features": "nesting=1",
+    "unprivileged": 1,
+    "hostname": "dns-rec01",
+    "arch": "amd64",
+    "ostype": "debian",
+    "swap": 512,
+    "memory": 1024,
+    "net0": "name=SVC50,bridge=vmbr0,gw=172.16.50.254,hwaddr=AE:4C:48:31:D4:AD,ip=172.16.50.11/24,tag=50,type=veth",
+    "status": "running",
+    "vmid": "50011",
+    "node": "mwprox01",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [{ "name": "MWhdd", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "AE:4C:48:31:D4:AD",
+        "ip": "172.16.50.11/24",
+        "tag": "50"
+      }
+    ]
+  },
+  {
+    "ostype": "debian",
+    "arch": "amd64",
+    "net0": "name=SVC50,bridge=vmbr0,gw=172.16.50.254,hwaddr=BE:EF:FE:6A:49:B1,ip=172.16.50.102/24,tag=50,type=veth",
+    "memory": 2048,
+    "swap": 512,
+    "rootfs": "MWhdd:subvol-50102-disk-0,size=8G",
+    "nameserver": "172.16.50.254 9.9.9.9 1.1.1.1",
+    "cores": 2,
+    "searchdomain": "mwprox.in",
+    "digest": "2409cfff37f1efae28807fdf4edf8be32c8a4b14",
+    "unprivileged": 1,
+    "hostname": "dns-sec102",
+    "features": "nesting=1",
+    "status": "running",
+    "vmid": "50102",
+    "node": "mwprox01",
+    "type": "lxc",
+    "pool": [null],
+    "Storage": [{ "name": "MWhdd", "size": "8G" }],
+    "networks": [
+      {
+        "bridge": "vmbr0",
+        "hwaddr": "BE:EF:FE:6A:49:B1",
+        "ip": "172.16.50.102/24",
+        "tag": "50"
+      }
+    ]
+  }
+]

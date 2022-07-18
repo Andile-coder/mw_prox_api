@@ -1,0 +1,52 @@
+{
+  "clientId": "mwprox04.cloudoffice.co.za",
+  "nodes": {
+    "data": [
+      {
+        "status": "online",
+        "ssl_fingerprint": "17:77:8E:19:76:1D:AC:37:7E:1B:85:1E:63:07:85:D6:CE:5E:D4:DA:BF:51:36:16:7F:77:A9:C6:DE:3A:10:B3",
+        "maxmem": 67320971264,
+        "uptime": 3700846,
+        "node": "mwprox04",
+        "maxcpu": 8,
+        "cpu": 0.0659503022162525,
+        "disk": 5741346816,
+        "type": "node",
+        "maxdisk": 627893469184,
+        "level": "",
+        "id": "node/mwprox04",
+        "mem": 51878723584
+      },
+      {
+        "mem": 46243438592,
+        "level": "",
+        "id": "node/mwprox02",
+        "type": "node",
+        "maxdisk": 382848860160,
+        "cpu": 0.0911812398652863,
+        "disk": 8535015424,
+        "uptime": 3701717,
+        "node": "mwprox02",
+        "maxcpu": 8,
+        "maxmem": 67320963072,
+        "status": "online",
+        "ssl_fingerprint": "63:26:43:07:9A:61:50:1B:C8:C7:AA:30:B0:B2:AD:BF:CD:9B:C1:3B:C2:79:94:39:35:36:8E:5A:50:82:CD:F1"
+      },
+      {
+        "maxmem": 67320963072,
+        "status": "online",
+        "ssl_fingerprint": "F5:44:75:50:6C:08:66:94:8F:74:83:86:3E:08:B8:2B:2E:EC:54:AB:6D:AD:C6:FE:DB:0F:16:DB:41:29:8D:0E",
+        "cpu": 0.0587933905469451,
+        "disk": 14421196800,
+        "uptime": 3701030,
+        "node": "mwprox01",
+        "maxcpu": 8,
+        "level": "",
+        "id": "node/mwprox01",
+        "type": "node",
+        "maxdisk": 383747751936,
+        "mem": 53523918848
+      }
+    ]
+  }
+}
