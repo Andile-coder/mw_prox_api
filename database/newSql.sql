@@ -42,16 +42,12 @@ CREATE TABLE instances(
     clusterId int REFERENCES clusters(clusterid),
     unique(clusterid,vmid)
 );
-
 create table responses(
+    responseId serial primary key,
+    clusterId int references Clusters(clusterid),
     loadTime timestamptz,
     response json,
-    query varchar,
+    query varchar
 );
--- INSERT INTO Clusters (name,description,baseURL) VALUES('cluster name','cluster description','cluster url');
--- select clusterId from clusters where name = 'cluster name';
--- INSERT INTO Nodes (clusterId,nodeName,status) VALUES(clusterId,'nodeDemo','status');
--- select nodeId from nodes where nodename='nodedemo';
--- INSERT INTO Instances (vmid,name,nodeId,intanceType,cores,memory,status,networks,storage) VALUES('vmid','instanceName',nodeDemoId,'lxc',23,100,'demostatus','[{"size":"gbo"},{"size":"gb"}]','[{"size":"gbo"},{"size":"gb"}]');
 
 
