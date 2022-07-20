@@ -22,26 +22,32 @@ CREATE TABLE Clusters(
 create table Nodes (
     Nodeid serial primary key,
     clusterid int REFERENCES clusters(clusterid),
-    nodeName VARCHAR(20) NOT NULL,
-    status varchar(20)
+    nodeName VARCHAR(100) NOT NULL,
+    status varchar(100),
+    unique (Nodeid,clusterid)
 );
 
 CREATE TABLE instances(
     InstanceId      SERIAL PRIMARY KEY,
-    vmid    VARCHAR(20) NOT NULL,
-    name    VARCHAR(20) NOT NULL,
+    vmid    VARCHAR(100) NOT NULL,
+    name    VARCHAR(100) ,
     node_id int REFERENCES Nodes(NodeId),
     intanceType typeInstance,
     cores   INT,
     memory  INT,
-    status  varchar(20),
-    pool varchar (20),
+    status  varchar(100),
+    pool varchar (100),
     networks JSON,
-    storage JSON
-    -- clusterId
--- constraint (clusterId,vmid) is unique;
+    storage JSON,
+    clusterId int REFERENCES clusters(clusterid),
+    unique(clusterid,vmid)
 );
 
+create table responses(
+    loadTime timestamptz,
+    response json,
+    query varchar,
+);
 -- INSERT INTO Clusters (name,description,baseURL) VALUES('cluster name','cluster description','cluster url');
 -- select clusterId from clusters where name = 'cluster name';
 -- INSERT INTO Nodes (clusterId,nodeName,status) VALUES(clusterId,'nodeDemo','status');

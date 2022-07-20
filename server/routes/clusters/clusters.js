@@ -1,5 +1,4 @@
 const pool = require("../../config/config.js");
-const cluster = require("../../../App/data/cluster.json");
 const getAllClusters = (req, res) => {
   const query = "SELECT * FROM Clusters";
   pool
@@ -11,7 +10,7 @@ const getAllClusters = (req, res) => {
     });
 };
 
-const postCluster = () => {
+const postCluster = async (cluster) => {
   const name = cluster.clusterId;
   const description = cluster.description;
   const baseUrl = cluster.baseUrl;
@@ -23,6 +22,4 @@ const postCluster = () => {
     .catch((error) => console.log(error));
 };
 
-postCluster();
-
-module.exports = { getAllClusters, postCluster };
+module.exports = { postCluster };

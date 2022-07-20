@@ -14,13 +14,19 @@ const getAllInstances = (req, res) => {
 
 const postVms = async (instances) => {
   instances.forEach(async (vm) => {
-    const nodeQuery = `SELECT (NODEID) FROM NODES WHERE NODENAME='${vm.node}'`;
+    const nodeQuery = `SELECT NODEID,clusterid FROM NODES WHERE NODENAME='${vm.node}'`;
     const nodeId = await pool
       .query(nodeQuery)
       .then((data) => data.rows[0].nodeid)
       .catch((err) => console.log(err));
+
+    const clusterId = await pool
+      .query(nodeQuery)
+      .then((data) => data.rows[0].clusterid)
+      .catch((err) => console.log(err));
+
     const query =
-      "INSERT INTO instances (vmid,name,node_id,intancetype,cores,memory,status,pool,networks,storage) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)";
+      "INSERT INTO instances (vmid,name,node_id,intancetype,cores,memory,status,pool,networks,storage,clusterid) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)";
     pool
       .query(query, [
         vm.vmid,
@@ -33,12 +39,13 @@ const postVms = async (instances) => {
         vm.pool[0],
         JSON.stringify(vm.networks),
         JSON.stringify(vm.Storage),
+        clusterId,
       ])
       .then(() => console.log("instance added"))
       .catch((error) => console.log(error));
   });
 };
 
-postVms(lxc);
-
-module.exports = getAllInstances;
+// postVms(lxc);
+// postVms(vms);
+module.exports = { postVms };

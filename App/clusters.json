@@ -1,0 +1,18 @@
+[
+  {
+    "clusterId": "fatchong01-lim03.doadmin4.xyz",
+    "username": "noc_audit",
+    "password": "Friday-Uproar6-Wrongdoer-Issuing",
+    "description": "cluster description",
+    "auth": "pve",
+    "baseUrl": "http://fatchong01-lim03.doadmin4.xyz:8006/"
+  },
+  {
+    "clusterId": "prox01-rbx8.doadmin4.xyz",
+    "username": "noc_audit",
+    "password": "Friday-Uproar6-Wrongdoer-Issuing",
+    "description": "cluster description",
+    "auth": "pve",
+    "baseUrl": "http://prox01-rbx8.doadmin4.xyz:8006/"
+  }
+]
