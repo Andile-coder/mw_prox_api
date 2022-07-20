@@ -1,5 +1,4 @@
 const pool = require("../../config/config.js");
-const nodes = require("../../../App/data/nodes.json");
 
 const postNode = async (nodes) => {
   //get clusterid

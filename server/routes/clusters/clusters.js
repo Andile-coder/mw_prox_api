@@ -12,12 +12,15 @@ const getAllClusters = (req, res) => {
 
 const postCluster = async (cluster) => {
   const name = cluster.clusterId;
+  const username = cluster.username;
+  const pass = cluster.password;
+  const auth = cluster.auth;
   const description = cluster.description;
   const baseUrl = cluster.baseUrl;
   const query =
-    "INSERT INTO Clusters (name,description,baseURL) VALUES($1,$2,$3)";
+    "INSERT INTO Clusters (name,pass,username,auth,description,baseURL) VALUES($1,$2,$3,$4,$5,$6)";
   pool
-    .query(query, [name, description, baseUrl])
+    .query(query, [name, pass, username, auth, description, baseUrl])
     .then(() => console.log("cluster added"))
     .catch((error) => console.log(error));
 };

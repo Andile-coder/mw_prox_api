@@ -23,7 +23,6 @@ const Populate = async (clusters) => {
       //get nodes
       let nodes = (await client.nodes.index()).response;
       let cluster = (await client.cluster.resources.resources("vm")).response;
-
       nodes = { clientId: clientId, nodes: nodes };
       //get all pools
       const getPools = async () => {

@@ -5,20 +5,12 @@ CREATE TYPE typeInstance AS ENUM ('lxc','qemu');
 CREATE TABLE Clusters(
     clusterid      SERIAL PRIMARY KEY,
     name           varchar(100) unique NOT NULL,
+    pass           varchar,
+    username       varchar,
+    auth           varchar,
     description    varchar(200),
     baseURL        varchar(100)
 );
-
-
--- CREATE TABLE Nodes(
---     Nodeid SERIAL PRIMARY KEY,
---  ---   clusterId varchar REFERENCES Clusters(name),
---     clusterId varchar REFERENCES Clusters(ClusterId),
---     nodeName VARCHAR(20) NOT NULL,
---     status varchar(20)
---     -- constraint (clusterId,nodeName) is unique;
--- );
-
 create table Nodes (
     Nodeid serial primary key,
     clusterid int REFERENCES clusters(clusterid),

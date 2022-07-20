@@ -1,6 +1,5 @@
 const pool = require("../../config/config.js");
-const vms = require("../../../App/data/vms.json");
-const lxc = require("../../../App/data/containers.json");
+
 const getAllInstances = (req, res) => {
   const query = "SELECT * FROM instances";
   pool
@@ -13,7 +12,7 @@ const getAllInstances = (req, res) => {
 };
 
 const postVms = async (instances) => {
-  instances.forEach(async (vm) => {
+  await instances.forEach(async (vm) => {
     const nodeQuery = `SELECT NODEID,clusterid FROM NODES WHERE NODENAME='${vm.node}'`;
     const nodeId = await pool
       .query(nodeQuery)
@@ -46,6 +45,4 @@ const postVms = async (instances) => {
   });
 };
 
-// postVms(lxc);
-// postVms(vms);
 module.exports = { postVms };
