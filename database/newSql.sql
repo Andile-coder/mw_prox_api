@@ -36,10 +36,10 @@ CREATE TABLE instances(
 );
 create table responses(
     responseId serial primary key,
-    clusterId int references Clusters(clusterid),
     loadTime timestamptz,
-    response json,
-    query varchar
+    clusterId int ,
+    query varchar,
+    response JSON
 );
 
 

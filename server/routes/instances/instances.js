@@ -18,7 +18,6 @@ const postVms = async (instances) => {
       .query(nodeQuery)
       .then((data) => data.rows[0].nodeid)
       .catch((err) => console.log(err));
-
     const clusterId = await pool
       .query(nodeQuery)
       .then((data) => data.rows[0].clusterid)

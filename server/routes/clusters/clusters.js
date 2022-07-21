@@ -11,6 +11,11 @@ const getAllClusters = (req, res) => {
 };
 
 const postCluster = async (cluster) => {
+  await pool
+    .query("truncate clusters restart identity cascade")
+    .then(() => console.log("table trancated"))
+    .catch((error) => console.log(error));
+
   const name = cluster.clusterId;
   const username = cluster.username;
   const pass = cluster.password;
@@ -19,7 +24,7 @@ const postCluster = async (cluster) => {
   const baseUrl = cluster.baseUrl;
   const query =
     "INSERT INTO Clusters (name,pass,username,auth,description,baseURL) VALUES($1,$2,$3,$4,$5,$6)";
-  pool
+  await pool
     .query(query, [name, pass, username, auth, description, baseUrl])
     .then(() => console.log("cluster added"))
     .catch((error) => console.log(error));

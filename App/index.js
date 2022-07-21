@@ -6,7 +6,7 @@ const clusters = require("./clusters.json");
 const ClusterRoute = require("../server/routes/clusters/clusters.js");
 const NodesRoute = require("../server/routes/nodes/nodes.js");
 const InstancesRoute = require("../server/routes/instances/instances.js");
-
+const ResponseRoute = require("../server/routes/responses/responses.js");
 const Populate = async (clusters) => {
   await clusters.forEach(async (Cluster) => {
     const clientId = Cluster.clusterId;
@@ -20,33 +20,28 @@ const Populate = async (clusters) => {
       const configuredQemu = [];
       const configuredLxc = [];
       const configuredPools = [];
+      ClusterRoute.postCluster(Cluster);
       //get nodes
       let nodes = (await client.nodes.index()).response;
+      const nodesQ = `/nodes`;
+
+      ResponseRoute.postResponse(nodes, nodesQ, clientId);
+
+      //get vm via clusters
       let cluster = (await client.cluster.resources.resources("vm")).response;
+      const clusterQ = `/cluster/resources/`;
+      ResponseRoute.postResponse(nodes, clusterQ, clientId);
       nodes = { clientId: clientId, nodes: nodes };
-      //get all pools
-      const getPools = async () => {
-        const pools = (await client.pools.index()).response;
-
-        for (let i = 0; i < pools.data.length; i++) {
-          let pool = (await client.pools.get(pools.data[i].poolid).readPool())
-            .response;
-          pool = { ...pool.data, poolid: pools.data[i].poolid };
-          configuredPools.push(pool);
-        }
-
-        return configuredPools;
-      };
 
       //get qemu of all nodes
       async function getQemu() {
         for (let i = 0; i < nodes.nodes?.data?.length; i++) {
-          //get al qemus
+          //get all qemus
           const qemu = (
             await client.nodes.get(nodes.nodes.data[i].node).qemu.vmlist(0)
           ).response;
-
-          // console.log(qemu);
+          const vmListQ = `/nodes/${nodes.nodes.data[i].node}/qemu/`;
+          ResponseRoute.postResponse(qemu, vmListQ, clientId);
 
           for (let j = 0; j < qemu.data.length; j++) {
             //configure  returned qemus
@@ -56,6 +51,7 @@ const Populate = async (clusters) => {
                 .qemu.get(qemu.data[j].vmid)
                 .config.vmConfig()
             ).response;
+
             //add missing attributes status,vmid,node,type
             item = {
               ...item.data,
@@ -67,6 +63,8 @@ const Populate = async (clusters) => {
                 .filter((elem) => elem.vmid == qemu.data[j]?.vmid)
                 .map((pool) => pool.pool),
             };
+            const configQ = `/nodes/${nodes.nodes.data[i].node}/qemu/${qemu.data[j].vmid}/config`;
+            ResponseRoute.postResponse(item, configQ, clientId);
             configuredQemu.push(item);
           }
         }
@@ -78,6 +76,9 @@ const Populate = async (clusters) => {
           const lxc = (
             await client.nodes.get(nodes.nodes?.data[i].node).lxc.vmlist()
           ).response;
+          const vmListQ = `/nodes/${nodes.nodes.data[i].node}/lxc/`;
+          ResponseRoute.postResponse(lxc, vmListQ, clientId);
+
           for (let j = 0; j < lxc.data.length; j++) {
             let item = (
               await client.nodes
@@ -95,14 +96,15 @@ const Populate = async (clusters) => {
                 .filter((elem) => elem.vmid == lxc.data[j]?.vmid)
                 .map((pool) => pool.pool),
             };
-
+            const configQ = `/nodes/${nodes.nodes.data[i].node}/lxc/${lxc.data[j].vmid}/config`;
+            ResponseRoute.postResponse(item, configQ, clientId);
             configuredLxc.push(item);
           }
         }
         return configuredLxc;
       };
       const runner = async () => {
-        await ClusterRoute.postCluster(Cluster);
+        // await ClusterRoute.postCluster(Cluster);
         const qemu = await getQemu();
         await NodesRoute.postNode(nodes);
         const lxc = await getLxc();
